@@ -1,9 +1,15 @@
 package com.hackerrank.weather.model;
 
+import jakarta.persistence.*;
+
 import java.util.Date;
 import java.util.List;
 
+@Entity
 public class Weather {
+    @Id
+    //@SequenceGenerator(name = "weatherSequenceGenerator", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private Date date;
 
