@@ -1,6 +1,11 @@
 package com.hackerrank.weather.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 import java.util.Date;
 import java.util.List;
@@ -8,9 +13,9 @@ import java.util.List;
 @Entity
 public class Weather {
     @Id
-    //@SequenceGenerator(name = "weatherSequenceGenerator", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Temporal(TemporalType.DATE)
     private Date date;
 
     private Float lat;
